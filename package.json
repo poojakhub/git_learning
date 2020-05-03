@@ -1,0 +1,30 @@
+{
+  "name": "git_learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poojakhub/git_learning.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/poojakhub/git_learning/issues"
+  },
+  "homepage": "https://github.com/poojakhub/git_learning#readme",
+  "devDependencies": {
+    "@wdio/allure-reporter": "^6.1.5",
+    "@wdio/cli": "^6.1.7",
+    "@wdio/cucumber-framework": "^6.1.6",
+    "@wdio/local-runner": "^6.1.7",
+    "@wdio/selenium-standalone-service": "^6.0.16",
+    "@wdio/spec-reporter": "^6.1.5",
+    "wdio-cucumber-reporter": "0.0.2",
+    "wdio-json-reporter": "^2.0.0"
+  }
+}
