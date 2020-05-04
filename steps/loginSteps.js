@@ -32,5 +32,5 @@ Then('I should see home screen', async function () {
  
   var logoutBtn = await browser.$('body > app-root > app-main > div > div > div.layout-main > app-breadcrumb > div > div > a')
   await logoutBtn.click();
-  await browser.pause(2000);
+  await browser.pause(10000);
 });
