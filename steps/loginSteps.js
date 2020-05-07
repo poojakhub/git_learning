@@ -30,7 +30,7 @@ Then('I should see home screen', async function () {
   assert.deepEqual(isVisible, true);
 
  
-  var logoutBtn = await browser.$('body > app-root > app-main > div > div > div.layout-main > app-breadcrumb > div > div > a')
+  var logoutBtn = await browser.$('body > app-root > app-main > div > div > div.layout-main > app-breadcrumb > div > div > a:nth-child(2)')
   await logoutBtn.click();
   await browser.pause(10000);
 });

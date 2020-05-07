@@ -1,0 +1,84 @@
+const companyName = require('../../pages/filters/companyNameNo.Page')
+const { Given, When, Then } = require('cucumber')
+const assert = require('assert')
+
+Then('User should see dashboard screen', async function () {
+    var actual = await companyName.selectDashdoardLink()
+    assert.deepEqual(true, actual)
+    await browser.pause(10000);
+});
+
+Then('Filter option screen should appear', async function () {
+    await companyName.selectPageFilterLink()
+    await browser.pause(10000);
+});
+
+When('User click on company name and number', async function () {
+    await companyName.selectCompanyNameNoLink()
+    await browser.pause(10000);
+});
+
+Then('Search text box should appear', async function () {
+    await companyName.companyTextBoxIsDisplayed()
+    await browser.pause(10000);
+});
+
+When('User enter company name {string}', async function (text) {
+    await companyName.setCompanyTextBoxValue(text)
+    await browser.pause(10000);
+});
+
+When('Click on contain of all keyword', async function () {
+    await companyName.getContainOfAllKyewordEle()
+    await browser.pause(10000);
+});
+
+Then('I press add button', async function () {
+    await companyName.selectAddBoxEle()
+    await browser.pause(10000)
+});
+
+Then('Search company result found screent should appear', async function () {
+    var actual = await companyName.resultFoundIsDisplayed()
+    assert.deepEqual(true, actual)
+    await browser.pause(10000);
+});
+
+//Then('List of company contain the search {string}', async function() {
+//   await companyName.
+//  await browser.pause(10000)
+//});
+
+Then('Select company status {string}', async function (status) {
+    var allCompaniesStatus = await companyName.getCompanyStatusEle()
+    await companyName.selectCompaniesStatus()
+    await browser.pause()
+
+    for (let index = 0; index < allCompaniesStatus.length; index++) {
+        var txt = await allCompaniesStatus[index].getText()
+        assert.deepEqual(txt, status)
+    }
+});
+
+When('I click on filters', async function() {
+     await companyName.selectFiltersEle()
+     await companyName.pause() 
+});
+
+When('I select incorporation', async function () {
+    await companyName.selectIncorporation()
+
+    await browser.pause(10000)
+
+});
+
+When('I select date from {string}', async function (from) {
+    await companyName.selectFromDate(from)
+    await browser.pause(10000)
+});
+
+When('I select date to {string}', async function (to) {
+    await companyName.selectToDate(to)
+    await browser.pause()
+
+});
