@@ -9,6 +9,7 @@ When('I click on landregistry, filter options open', async function () {
 Then('I select the surrey county', async function () {
   await Surveyors.countyEleClick()
   await browser.pause(5000)
+  //await Surveyors.waitForDisplayed(5000)
   await Surveyors.searchIconEleClick()
   await browser.pause(4000)
 });

@@ -34,7 +34,8 @@ class Surveyors extends Page {
 
     async searchIconEleClick() {
         var searchIconEle = await this.searchIconEle()
-        await searchIconEle.waitForDisplayed()
+        //await searchIconEle.waitForDisplayed()
+        await browser.pause(5000)
         await searchIconEle.click()
         await searchIconEle.setValue('surrey')
         await browser.pause(3000)
