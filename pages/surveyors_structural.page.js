@@ -6,18 +6,14 @@ class Surveyors extends Page {
     async filterOptions() { return await browser.$('/html/body/app-root/app-main/div/div/div[2]/div/app-land-registry/div/div/app-filter-sidebar/div/div[1]/div/div[2]/div[1]/div') }
     async countyEle() { return await browser.$('/html/body/app-root/app-main/div/div/div[2]/div/app-land-registry/div/div/app-filter-sidebar/div/div[1]/div/div[2]/div[1]/div/ul/li[9]/h4/a') }
     async searchIconEle() { return await browser.$('/html/body/app-root/app-main/div/div/div[2]/div/app-land-registry/div/div/app-filter-sidebar/div/div[1]/div/div[2]/div[2]/div/div/p-listbox/div/div[2]/div/input') }
-    //async surreyOption(){return await browser.$('/html/body/app-root/app-main/div/div/div[2]/div/app-land-registry/div/div/app-filter-sidebar/div/div[1]/div/div[2]/div[2]/div/div/p-listbox/div/div[3]/ul/li[8]/span')}
-    async surreyOption() { return await browser.$('/html/body/app-root/app-main/div/div/div[2]/div/app-land-registry/div/div/app-filter-sidebar/div/div[1]/div/div[2]/div[2]/div/div/p-listbox/div/div[3]/ul/li[2]/span') }
+    async surreyOption() { return await browser.$('/html/body/app-root/app-main/div/div/div[2]/div/app-land-registry/div/div/app-filter-sidebar/div/div[1]/div/div[2]/div[2]/div/div/p-listbox/div/div[3]/ul/li[8]/span') }
+    //async surreyOption() { return await browser.$('/html/body/app-root/app-main/div/div/div[2]/div/app-land-registry/div/div/app-filter-sidebar/div/div[1]/div/div[2]/div[2]/div/div/p-listbox/div/div[3]/ul/li[2]/span') }
     //async surreyOption(){return await browser.$('body > app-root > app-main > div > div > div.layout-main > div > app-land-registry > div > div > app-filter-sidebar > div > div.fixedSidebarPanel.panelRight > div > div:nth-child(2) > div.p-col-12.p-lg-6 > div > div > p-listbox > div > div.ui-listbox-list-wrapper > ul > li.ui-listbox-item.ui-corner-all.ui-state-highlight.ng-star-inserted')}
     async buildTypeEle() { return await browser.$('/html/body/app-root/app-main/div/div/div[2]/div/app-land-registry/div/div/app-filter-sidebar/div/div[1]/div/div[2]/div[1]/div/ul/li[10]/h4/a') }
     async oldBuildEle() { return await browser.$('/html/body/app-root/app-main/div/div/div[2]/div/app-land-registry/div/div/app-filter-sidebar/div/div[1]/div/div[2]/div[2]/div/div/p-listbox/div/div[3]/ul/li[1]/span') }
     async propertyTypeEle() { return await browser.$('/html/body/app-root/app-main/div/div/div[2]/div/app-land-registry/div/div/app-filter-sidebar/div/div[1]/div/div[2]/div[1]/div/ul/li[12]/h4/a') }
     async detachedEle() { return await browser.$('/html/body/app-root/app-main/div/div/div[2]/div/app-land-registry/div/div/app-filter-sidebar/div/div[1]/div/div[2]/div[2]/div/div/p-listbox/div/div[3]/ul/li[1]/span') }
     async applyFilterEle() { return await browser.$('/html/body/app-root/app-main/div/div/div[2]/div/app-land-registry/div/div/app-filter-sidebar/div/div[1]/div/div[2]/div[4]/button[2]/span') }
-
-
-
-
 
     async landRegistryEleClick() {
         var landRegiEle = await this.landRegistryEle()
@@ -28,14 +24,12 @@ class Surveyors extends Page {
         await applyButton.click()
     }
     async selectOption() {
-
         var filterOptions = await this.filterOptions()
     }
     async countyEleClick() {
         var countyEle = await this.countyEle()
-        //if ( filterOptions.includes(countyEle)){
         await countyEle.click()
-        //}
+
     }
 
     async searchIconEleClick() {
@@ -70,7 +64,5 @@ class Surveyors extends Page {
         var applyFilterEle = await this.applyFilterEle()
         await applyFilterEle.click()
     }
-
-
 }
 module.exports = new Surveyors
