@@ -9,7 +9,7 @@ Feature: Company accounts catagory
     When      I click on Accounts category
     And       I select no accounts field
     And       I click on apply filter button
-    Then      Results screen should appear
-    When      I add column 'Company Category'
-    Then      'Company Category' column should appear
-    And       For all reacords the category should be 'Accounts'
+    # Then      Results screen should appear
+    # When      I add column 'Company Category'
+    # Then      'Company Category' column should appear
+    # And       For all reacords the category should be 'Accounts'

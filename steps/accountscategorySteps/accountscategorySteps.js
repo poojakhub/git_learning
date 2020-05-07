@@ -36,7 +36,8 @@ When('I click on apply filter button', async function () {
 });
 
 Then('Results screen should appear', async function() {
-    await accountsCategory.resultFoundEleIsDisplayed();
+    var actual = await accountsCategory.resultFoundEleIsDisplayed();
+    assert.deepEqual(true, actual)
     //await browser.pause(10000)
 });
 

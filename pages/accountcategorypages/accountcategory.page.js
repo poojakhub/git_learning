@@ -39,7 +39,7 @@ class accountsCategory extends Page {
 
     async clickOnApplyFilterEle() {
         var applyFilterLink = await this.getApplyFilterEle()
-        await applyFilterLink.waitForDisplayed(50000)
+        await applyFilterLink.waitForDisplayed(10000)
         await applyFilterLink.click()
     }
 
