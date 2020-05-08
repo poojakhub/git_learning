@@ -43,7 +43,7 @@ Then('I should see results with price between {string} and {string}', async func
   assert(priceAmountNum >= min)
   assert(priceAmountNum <= max)
   await browser.pause(3000)
-
+  await browser.saveScreenshot('./price.png')
 });
 When('I click Region filter', async function () {
   var Region = await Corporate.Region()
@@ -58,6 +58,7 @@ When('I click Region filter', async function () {
 When('I click South East', async function () {
   var SouthEast = await Corporate.SouthEast()
   await SouthEast.click()
+
 });
 
 
@@ -66,6 +67,7 @@ When('I click apply filter', async function () {
   var applyFilter = await Corporate.applyFilter()
   await applyFilter.click()
   await browser.pause(2000)
+  await browser.saveScreenshot('./region.png')
 
 
 });
