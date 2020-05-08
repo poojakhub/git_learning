@@ -45,3 +45,27 @@ Then('I should see results with price between {string} and {string}', async func
   await browser.pause(3000)
 
 });
+When('I click Region filter', async function () {
+  var Region = await Corporate.Region()
+  await Region.click()
+
+  await browser.pause(5000)
+
+
+});
+
+
+When('I click South East', async function () {
+  var SouthEast = await Corporate.SouthEast()
+  await SouthEast.click()
+});
+
+
+
+When('I click apply filter', async function () {
+  var applyFilter = await Corporate.applyFilter()
+  await applyFilter.click()
+  await browser.pause(2000)
+
+
+});
