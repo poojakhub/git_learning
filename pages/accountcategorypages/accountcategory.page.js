@@ -9,7 +9,7 @@ class accountsCategory extends Page {
     async getApplyFilterEle() {return await browser.$('div > div > app-filter-sidebar > div > div.fixedSidebarPanel.panelRight > div > div:nth-child(2) > div.p-col-12.text-right > button.ui-button-inline.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only > span')}
     async getResultFoundEle() {return await browser.$('body > app-root > app-main > div > div > div.layout-main > div > app-search-company-data > div > div > app-record-list > div > p-table > div > div.ui-table-caption.ui-widget-header.ng-star-inserted > div > div > h3')}
     async getCompanyCategoryEle() {return await browser.$('body > app-root > app-main > div > div > div.layout-main > div > app-search-company-data > div > div > app-record-list > div > p-table > div > div.ui-table-caption.ui-widget-header.ng-star-inserted > div > div > div > p-multiselect > div > div.ui-multiselect-label-container > span')}
-    async getCompanyCategorycolumnEle() {return await browser.$('')}
+    async getCompanyCategorycolumnEle() {return await browser.$('/html/body/app-root/app-main/div/div/div[2]/div/app-search-company-data/div/div/app-record-list/div/p-table/div/div[1]/div/div/div/p-multiselect/div/div[4]/div[2]/ul/p-multiselectitem[5]/li')}
         // var list = await browser.$('body > app-root > app-main > div > div > div.layout-main > div > app-search-company-data > div > div > app-record-list > div > p-table > div > div.ui-table-caption.ui-widget-header.ng-star-inserted > div > div > div > p-multiselect > div > div.ng-trigger.ng-trigger-overlayAnimation.ng-tns-c14-23.ui-multiselect-panel.ui-widget.ui-widget-content.ui-corner-all.ui-shadow.ng-star-inserted > div.ui-multiselect-items-wrapper > ul')
         // var item = await list.$('span*=Company Category')
         // return item;
@@ -64,9 +64,10 @@ class accountsCategory extends Page {
     async selectCompanyCategoryColumn() {
         var companyCategoryColumn = await this.getCompanyCategorycolumnEle() 
         await companyCategoryColumn.waitForDisplayed(50000)
-        await companyCategoryColumn.selectByVisibleText('company category')
-        await companyCategoryColumn.scrollToView()
+        //await companyCategoryColumn.selectByVisibleText('Company category')
+        //await companyCategoryColumn.scrollToView()
         await companyCategoryColumn.click()
+        await browser.pause(20000)
     }
 
 }
