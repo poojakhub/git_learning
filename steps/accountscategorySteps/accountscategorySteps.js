@@ -31,8 +31,8 @@ When('I select no accounts field', async function () {
 });
 
 When('I click on apply filter button', async function () {
-    await accountsCategory.getApplyFilterEle();
-    //await browser.pause(10000)
+    await accountsCategory.clickOnApplyFilterEle();
+    await browser.pause(10000)
 });
 
 Then('Results screen should appear', async function() {
@@ -50,6 +50,6 @@ Then('\'Company Category\' column should appear' , async function () {
     await accountsCategory.selectCompanyCategoryColumn();
 });
 
-//Then('For all reacords the category should be \'Accounts\'', async function () {
-   // await accountsCategory.();
-//}
+// Then('For all reacords the category should be \'Accounts\'', async function () {
+//    await accountsCategory.();
+//});
