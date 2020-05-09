@@ -16,17 +16,17 @@ const assert = require ('assert');
 
  When('I click on companies data', async function () {
      await accountsCategory.clickOnCompanyData()
-     //await browser.pause(10000)
+     await browser.pause(10000)
 });
 
 
-When('I click on Accounts category', async function () {
-    await accountsCategory.clickOnAccountCategoryEle();
+When('I click on category', async function () {
+    await accountsCategory.clickOnCategoryEle()
     //await browser.pause(10000)
 });
 
-When('I select no accounts field', async function () {
-    await accountsCategory.clickOnNoAccountsEle();
+When('I click on private limited company', async function () {
+    await accountsCategory.clickOnPtvCompanyEle()
     //await browser.pause(10000)
 });
 
@@ -50,6 +50,7 @@ Then('\'Company Category\' column should appear' , async function () {
     await accountsCategory.selectCompanyCategoryColumn();
 });
 
-// Then('For all reacords the category should be \'Accounts\'', async function () {
-//    await accountsCategory.();
-//});
+When('For all reacords the category should be {string}', async function (category) {
+   await accountsCategory.selectCompanyRecordsEle(category);
+   await  accountsCategory.pause();
+});
