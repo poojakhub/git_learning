@@ -2,8 +2,9 @@
     module.exports = class Page {
 
         async open() {
-             await browser.setWindowSize(1366,768);
-             await browser.url('https://test.datagardener.com/login');
+            //await browser.setWindowSize(1688,768);
+           // await browser.maximizeWindow();
+            await browser.url('https://test.datagardener.com/login');
          }
     
         async getTitle()
