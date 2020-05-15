@@ -13,10 +13,7 @@ class LoginPage extends Page {
 
     //async open() {await super.open('https://test.datagardener.com/login')}
    
-    async selectLogin() {
-        let loginBtn = await this.loginBtn();
-        await loginBtn.click();
-    }
+   
 
     async login(username, password) {
         var usernameInputField = await this.usernameEle();

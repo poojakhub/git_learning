@@ -12,8 +12,5 @@
             return await browser.getTitle();
         }
     
-        async pause(ms)
-        {
-            browser.pause(parseInt(ms));
-        }
+       
     };

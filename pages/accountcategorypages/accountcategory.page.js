@@ -12,6 +12,11 @@ class accountsCategory extends Page {
     async getCompanyCategoryEle() {return await browser.$('body > app-root > app-main > div > div > div.layout-main > div > app-search-company-data > div > div > app-record-list > div > p-table > div > div.ui-table-caption.ui-widget-header.ng-star-inserted > div > div > div > p-multiselect > div > div.ui-multiselect-label-container > span')}
     async getCompanyCategorycolumnEle() {return await browser.$('/html/body/app-root/app-main/div/div/div[2]/div/app-search-company-data/div/div/app-record-list/div/p-table/div/div[1]/div/div/div/p-multiselect/div/div[4]/div[2]/ul/p-multiselectitem[5]/li')}
     async getCompanyRecordsEle() {return await browser.$$('body > app-root > app-main > div > div > div.layout-main > div > app-search-company-data > div > div > app-record-list > div > p-table > div > div.ui-table-scrollable-wrapper.ng-star-inserted > div > div.ui-table-scrollable-body > table > tbody > tr > td:nth-child(10)')}
+    async getCompanyAgeEle() {return await browser.$('#ui-accordiontab-0-content > div > li:nth-child(5) > a')}
+    async getCompanyAgeTxt() {return await browser.$('body > app-root > app-main > div > div > div.layout-main > div > app-search-company-data > div > div > app-filter-sidebar > div > div.fixedSidebarPanel.panelRight > div > div:nth-child(2) > div.p-col-12.p-lg-6 > div > div > div > div > span.md-inputfield > input')}
+    async getCompanyAgeLink() {return await browser.$('body > app-root > app-main > div > div > div.layout-main > div > app-search-company-data > div > div > app-filter-sidebar > div > div.fixedSidebarPanel.panelRight > div > div:nth-child(2) > div.p-col-12.p-lg-6 > div > div > ul > li:nth-child(1) > p > a')}
+    async getCompanyGoogleLink() {return await browser.$('body > app-root > app-main > div > div > div.layout-main > div > app-search-company-data > div > div > app-record-list > div > p-table > div > div.ui-table-scrollable-wrapper.ng-star-inserted > div > div.ui-table-scrollable-body > table > tbody > tr:nth-child(1) > td:nth-child(3) > div > div > a:nth-child(1)')}
+    
 
     //  async selectOnHomeScreenEle() {
     //  var homeScreenLink = await this.homeScreenIsEle()
@@ -77,6 +82,41 @@ class accountsCategory extends Page {
        
         await browser.pause(10000)
     }
+
+    //scenario-2
+
+    async clickOnCompanyAgeEle() {
+        var companyAgeEle = await this.getCompanyAgeEle()
+        await companyAgeEle.waitForDisplayed(100000)
+        await companyAgeEle.click()
+       // await browser.saveScreenshot('./region.png')
+    }
+
+    async enterCompanyAge(years) {
+        var ageTxtBox = await this.getCompanyAgeTxt()
+        await ageTxtBox.waitForDisplayed(100000)
+        await ageTxtBox.setValue(years)
+    }
+
+    async lessThenYears(years) {
+        var lessThenYearsEle = await this.getCompanyAgeLink()
+        await lessThenYearsEle.waitForDisplayed(100000)
+        await lessThenYearsEle.click()
+    }
+
+    async clickOnGoogleLink() {
+        var googleLink = await this.getCompanyGoogleLink()
+        await googleLink.waitForDisplayed();
+        await googleLink.click();
+        await browser.pause(5000)
+        await browser.switchWindow('AO APPLICATIONS LIMITED - Google Search');
+        await browser.pause(5000)
+        await browser.closeWindow();
+        await browser.pause(5000);
+        await browser.switchWindow('Welcome | Company Data Provider | Data Gardener');
+    }
+
+
 
 }
 module.exports = new  accountsCategory();

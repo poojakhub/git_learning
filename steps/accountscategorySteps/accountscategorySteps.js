@@ -54,3 +54,26 @@ When('For all reacords the category should be {string}', async function (categor
    await accountsCategory.selectCompanyRecordsEle(category);
    await  accountsCategory.pause();
 });
+
+
+//scenario 2
+
+When('I click on company age', async function () {
+    await accountsCategory.clickOnCompanyAgeEle()
+    await accountsCategory.pause()
+});
+
+When('I enter {string}', async function (years) {
+    await accountsCategory. enterCompanyAge(years)
+    await accountsCategory.pause(100000)
+});
+
+Then('I click on less then {string} years', async function (years) {
+    await accountsCategory.lessThenYears(years)
+    await accountsCategory.pause()
+ });
+
+Then('I click on {string}', async function (website) {
+    await accountsCategory.clickOnGoogleLink()
+    await accountsCategory.pause()
+});
