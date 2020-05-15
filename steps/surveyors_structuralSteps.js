@@ -33,5 +33,9 @@ Then('The result found must be matched with our applied filter criteria.', async
   await Surveyors.resultTable()
   await browser.pause(3000)
 });
+When('I select few data to export', async function () {
+  await Surveyors.selecResultData()
+  await browser.pause(3000)
 
+});
 

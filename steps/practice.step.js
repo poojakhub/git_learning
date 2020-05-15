@@ -44,6 +44,8 @@ Then('I select the year-{string} , which must be displayed into the box', async 
 When('I select the date-{int} from the table ,table must be disapper and full date must be displayed into the From option', async function (Date) {
   await Practice.dateSelect(Date)
   await browser.pause(7000)
+  //await browser.closeWindow()
+   
 });
 
 

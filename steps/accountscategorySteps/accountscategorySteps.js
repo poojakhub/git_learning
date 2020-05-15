@@ -53,4 +53,5 @@ Then('\'Company Category\' column should appear' , async function () {
 When('For all reacords the category should be {string}', async function (category) {
    await accountsCategory.selectCompanyRecordsEle(category);
    await  accountsCategory.pause();
+   //await browser.closeWindow()
 });

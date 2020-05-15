@@ -9,9 +9,8 @@ const assert = require ('assert');
 Given('I am on dataGardener website', async function () {
   await LoginPage.open();
   await browser.pause(5000)
-
-  var title = await LoginPage.getTitle();
-  assert.deepEqual(title, "Data Gardener");
+  //var title = await LoginPage.getTitle();
+  //assert.deepEqual(title, "Data Gardener");
 });
 
 Then('A login form should appear', async function () {

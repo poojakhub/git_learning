@@ -15,8 +15,9 @@ class Surveyors extends Page {
     async detachedEle() { return await browser.$('/html/body/app-root/app-main/div/div/div[2]/div/app-land-registry/div/div/app-filter-sidebar/div/div[1]/div/div[2]/div[2]/div/div/p-listbox/div/div[3]/ul/li[1]/span') }
     async applyFilterEle() { return await browser.$('/html/body/app-root/app-main/div/div/div[2]/div/app-land-registry/div/div/app-filter-sidebar/div/div[1]/div/div[2]/div[4]/button[2]/span') }
     async resultTableEle() { return await browser.$$('/html/body/app-root/app-main/div/div/div[2]/div/app-land-registry/div/div/app-record-list/div/p-table/div/div[2]/div/div[2]/table/tbody/tr') }
+    async selectResultDataEle() { return await browser.$$('/html/body/app-root/app-main/div/div/div[2]/div/app-land-registry/div/div/app-record-list/div/p-table/div/div[2]/div/div[2]/table/tbody/tr/td[1]/p-tablecheckbox/div/div[2]') }
 
-    
+
     async landRegistryEleClick() {
         var landRegiEle = await this.landRegistryEle()
         await landRegiEle.click()
@@ -69,8 +70,8 @@ class Surveyors extends Page {
     }
     async resultTable() {
         var resultTableEle = await this.resultTableEle()
-        for (var i = 0; i < resultTableEle.length-70; i++) {
-           // var resultTableEle = await this.resultTableEle()
+        for (var i = 0; i < resultTableEle.length - 70; i++) {
+            // var resultTableEle = await this.resultTableEle()
 
             var detachedResult = await resultTableEle[i].$('./td[2]')
             var detachedResultTxt = await detachedResult.getText()
@@ -89,5 +90,24 @@ class Surveyors extends Page {
 
         }
     }
+
+
+    async selecResultData() {
+        //var selectResultDataEle = await this.selectResultDataEle()
+        for (var i = 0; i <= 2; i++) {
+            var selectResultDataEle = await this.selectResultDataEle()
+            await selectResultDataEle[i].click()
+            await browser.pause(2000)
+        }
+
+
+
+    }
+
+
+
+
+
+
 }
 module.exports = new Surveyors

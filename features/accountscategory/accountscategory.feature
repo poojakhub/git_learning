@@ -1,5 +1,5 @@
 Feature: Company accounts catagory
-
+ @Surveyors
   Scenario: Accounts catagory company
     Given     I am on dataGardener website
     And       A login form should appear
