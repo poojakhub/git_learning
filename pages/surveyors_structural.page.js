@@ -14,7 +14,9 @@ class Surveyors extends Page {
     async propertyTypeEle() { return await browser.$('/html/body/app-root/app-main/div/div/div[2]/div/app-land-registry/div/div/app-filter-sidebar/div/div[1]/div/div[2]/div[1]/div/ul/li[12]/h4/a') }
     async detachedEle() { return await browser.$('/html/body/app-root/app-main/div/div/div[2]/div/app-land-registry/div/div/app-filter-sidebar/div/div[1]/div/div[2]/div[2]/div/div/p-listbox/div/div[3]/ul/li[1]/span') }
     async applyFilterEle() { return await browser.$('/html/body/app-root/app-main/div/div/div[2]/div/app-land-registry/div/div/app-filter-sidebar/div/div[1]/div/div[2]/div[4]/button[2]/span') }
+    async resultTableEle() { return await browser.$$('/html/body/app-root/app-main/div/div/div[2]/div/app-land-registry/div/div/app-record-list/div/p-table/div/div[2]/div/div[2]/table/tbody/tr') }
 
+    
     async landRegistryEleClick() {
         var landRegiEle = await this.landRegistryEle()
         await landRegiEle.click()
@@ -64,6 +66,28 @@ class Surveyors extends Page {
     async applyFilterEleClick() {
         var applyFilterEle = await this.applyFilterEle()
         await applyFilterEle.click()
+    }
+    async resultTable() {
+        var resultTableEle = await this.resultTableEle()
+        for (var i = 0; i < resultTableEle.length-70; i++) {
+           // var resultTableEle = await this.resultTableEle()
+
+            var detachedResult = await resultTableEle[i].$('./td[2]')
+            var detachedResultTxt = await detachedResult.getText()
+            assert.deepEqual(detachedResultTxt, 'Detached')
+            await browser.pause(300)
+
+            var oldBuildResult = await resultTableEle[i].$('./td[5]')
+            var oldBuildResultTxt = await oldBuildResult.getText()
+            assert.deepEqual(oldBuildResultTxt, 'Old Build')
+            await browser.pause(300)
+
+            var countyResult = await resultTableEle[i].$('./td[13]')
+            var countyResultTxt = await countyResult.getText()
+            assert.deepEqual(countyResultTxt, 'Surrey')
+            await browser.pause(300)
+
+        }
     }
 }
 module.exports = new Surveyors

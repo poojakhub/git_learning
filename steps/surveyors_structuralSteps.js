@@ -30,6 +30,8 @@ Then('Apply filter button is clicked', async function () {
   await browser.pause(3000)
 });
 Then('The result found must be matched with our applied filter criteria.', async function () {
+  await Surveyors.resultTable()
+  await browser.pause(3000)
 });
 
 
