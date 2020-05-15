@@ -11,7 +11,7 @@ class LoginPage extends Page {
     
     async loginBtnEle() {return await browser.$('body > app-root > app-login > div > div > form > div > div.card > div.ui-g-12.pad-b-0 > button > span')}
 
-    //async open() {await super.open('https://test.datagardener.com/login')}
+    async open() {await super.open('https://test.datagardener.com/login')}
    
    
 

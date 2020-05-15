@@ -1,4 +1,5 @@
 Feature: Company accounts catagory
+<<<<<<< HEAD
 
   # Scenario: Accounts catagory company
   #   Given     I am on dataGardener website
@@ -16,6 +17,11 @@ Feature: Company accounts catagory
 
     Scenario: Check company age
      Given     I am on dataGardener website
+=======
+ @Surveyors
+  Scenario: Accounts catagory company
+    Given     I am on dataGardener website
+>>>>>>> 81a7da0f069ae45b91971ecdaea2492fb7b9a32d
     And       A login form should appear
     When      I enter 'poojakhub@gmail.com' and '8ul8ul8uL'
     #Then      I should see home screen (This step logs out so can't click on dashboard...)

@@ -11,3 +11,4 @@ Feature: Sureveyor/Structural engineers/Architects are looking for Old Builds at
         Then I select the Detached property option
         Then Apply filter button is clicked
         Then The result found must be matched with our applied filter criteria.
+        When I select few data to export
